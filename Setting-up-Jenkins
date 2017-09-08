@@ -2,6 +2,10 @@ General procedure to install Jenkins:
 
 $java -version  ## Check if Java is already installed
 For jenkins Java 8 is required.
+yum remove java-1.7.0
+#install java 8
+yum install java-1.8.0-openjdk-devel.x86_64
+
 Download Jenkins from www.jenkins.io/download for your platform
 Install Jenkin
 Launch Jenkin
@@ -13,6 +17,10 @@ Explore it !!!
 
 ############## Step-by-step installation of Jenkins on ec2 instances ################
 yum update -y
+#if java 1.7.0 is installed ... remove it
+yum remove java-1.7.0
+#install java 8
+yum install java-1.8.0-openjdk-devel.x86_64
 wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo  ## Add jenkins in yum repo
 rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key  ##download the key necessary for proper installation
 yum install jenkins         ## install Jenkins
